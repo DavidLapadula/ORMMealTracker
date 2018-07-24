@@ -1,0 +1,22 @@
+:root {
+    --main-gold-color: rgb(148, 104, 10);
+    --main-green-color: rgb(59, 155, 3);
+}
+
+body {
+    background-image: url("../images/background.png");  
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+.content-font {
+    font-family: 'Bangers', cursive;
+}
+
+#submit-form {
+    background-image: url("../images/fries.jpg");  
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position: center; 
+}
