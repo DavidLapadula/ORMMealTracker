@@ -1,5 +1,5 @@
 // require mySQl dependancies
-let mysql = require('mysql');
+let mysql = require('mysql'); 
 
 // Connect to the database
 let connection = mysql.createConnection({

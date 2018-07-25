@@ -1,5 +1,5 @@
 {{!-- Add reset button and link to code if time permits --}}
-<div class="container"> 
+<div class="container">
     <div id="title" class="col-lg-8 align-self-center">
         <h1 class="content-font"> Burger Store</h1>
         <img src="assets/images/burgers.png" class="img-fluid">
@@ -15,14 +15,34 @@
         <div class="col-lg-5">
             <h1 id="content-font" class="text-center"> Burgers to Eat</h1>
             <div id="toEat">
- 
+                <ul>
+                    {{#each burgers}} {{#unless this.devoured}}
+                    <li>
+                        {{this.id}} {{this.burger_name}}
+
+                        <form action="/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="devoured" value="true">
+                            <button class="btn-primary" type="submit">Devour It!</button>
+                        </form>
+                    {{!-- Need Better way of doing the post --}}
+                    </li>
+                    {{/unless}} {{/each}}
+                </ul>  
+
             </div>
-        </div>
+        </div> 
         <div class="col-lg-5">
             <h1 id="content-font" class="text-center"> Devoured</h1>
             <div id="devoured">
 
+                {{#each burgers}} {{#if this.devoured}}
+                <li>
+                    {{this.id}} {{this.burger_name}}
+
+                </li>
+                {{/if}} {{/each}}
+
             </div>
         </div>
     </div>
-</div> 
+</div>

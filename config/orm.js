@@ -1,6 +1,6 @@
 let connection = require('../config/connection.js');  
 
-let onm = {}; 
+let orm = {};  
 
 
 
