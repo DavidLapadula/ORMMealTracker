@@ -1,13 +1,22 @@
 :root {
     --main-gold-color: rgb(148, 104, 10);
     --main-green-color: rgb(59, 155, 3);
+    --main-purple-color: rgb(160, 5, 113);
 }
 
-body {
+body { 
     background-image: url("../images/background.png");  
     background-size: cover; 
     background-attachment: fixed;
     background-position: center; 
+}
+
+.gold-font {
+    color: var(--main-gold-color); 
+}
+
+.purple-font {
+    color: var(--main-purple-color); 
 }
 
 .content-font {
@@ -17,6 +26,23 @@ body {
 #submit-form {
     background-image: url("../images/fries.jpg");  
     background-size: cover; 
-    background-attachment: fixed;
-    background-position: center; 
+}
+
+@keyframes pulse_animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.05); }
+    40% { transform: scale(1.065); }
+    50% { transform: scale(1.08); }
+    60% { transform: scale(1.08); }
+    70% { transform: scale(1.065); }
+    80% { transform: scale(1.05); }
+    100% { transform: scale(1); } 
+} 
+
+.pulse {
+    animation-name: pulse_animation;
+    animation-duration: 5000ms;
+    transform-origin:70% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }

@@ -1,47 +1,39 @@
 {{!-- Add reset button and link to code if time permits --}}
 <div class="container">
-    <div id="title" class="col-lg-8 align-self-center">
-        <h1 class="content-font"> Burger Store</h1>
-        <img src="assets/images/burgers.png" class="img-fluid">
+    <div id="title" class="col-lg-8 offset-lg-2">
+        <header class="content-font text-center display-1 purple-font">Burger Store</header>
+        <img src="images/burgers.png" class="img-fluid w-50 mx-auto d-block pulse">
     </div>
-    <div id="submit-form" class="col-lg-6 align-self-center">
-        <div class="form-group p-2 align-self-center">
-            <label class="content-font" for="addburgerheader">Add Burger of your choice</label>
-            <input type="text" class="form-control" id="newBurger" placeholder="burger of choice">
-            <button type="button" class="btn btn-success btn-lg btn-block mt-2">Add it!</button>
+    <h1 class="content-font text-center purple-font">Add burger of choice</h1>
+    <div id="submit-form" class="col-lg-6 offset-lg-3 text-center p-2 mb-3 rounded">
+        <div class="form-group">
+            <input type="text" class="form-control text-center" id="newBurgerInput" placeholder="what kind of burger would you like?">
+            <button id="addBurgerBtn" type="button" class="btn btn-warning btn-sm mt-2">Add it!</button>
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-lg-5">
-            <h1 id="content-font" class="text-center"> Burgers to Eat</h1>
+        <div class="col-lg-5 bg-white m-1 rounded">
+            <h1 class="text-center content-font mb-3 purple-font">Burgers to Eat</h1>
             <div id="toEat">
-                <ul>
-                    {{#each burgers}} {{#unless this.devoured}}
-                    <li>
-                        {{this.id}} {{this.burger_name}}
+                {{#each burgers}} {{#unless this.devoured}}
+                <div class="content-font h4 d-flex justify-content-between">
 
-                        <form action="/{{this.id}}?_method=PUT" method="POST">
-                            <input type="hidden" name="devoured" value="true">
-                            <button class="btn-primary" type="submit">Devour It!</button>
-                        </form>
-                    {{!-- Need Better way of doing the post --}}
-                    </li>
-                    {{/unless}} {{/each}}
-                </ul>  
-
-            </div>
-        </div> 
-        <div class="col-lg-5">
-            <h1 id="content-font" class="text-center"> Devoured</h1>
-            <div id="devoured">
-
-                {{#each burgers}} {{#if this.devoured}}
-                <li>
                     {{this.id}} {{this.burger_name}}
 
-                </li>
-                {{/if}} {{/each}}
+                    <button class="btn-primary devourBtn" type="submit" data-devourid="{{this.id}}">Devour It!</button>
 
+                </div>
+                {{/unless}} {{/each}}
+            </div>
+        </div>
+        <div class="col-lg-5 bg-white m-1 rounded content-font h4">
+            <h1 class="text-center content-font mb-3 purple-font">Devoured</h1>
+            <div id="devoured">
+                {{#each burgers}} {{#if this.devoured}}
+                <p>
+                    {{this.id}} {{this.burger_name}}
+                </p>
+                {{/if}} {{/each}}
             </div>
         </div>
     </div>
