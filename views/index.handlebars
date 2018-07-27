@@ -2,33 +2,30 @@
 <div class="container">
     <div id="title" class="col-lg-8 offset-lg-2">
         <header class="content-font text-center display-1 purple-font">Burger Store</header>
-        <img src="images/burgers.png" class="img-fluid w-50 mx-auto d-block pulse">
+        <img src="images/burgers.png" class="img-fluid w-50 mx-auto d-block animated bounceInDown">
     </div>
     <h1 class="content-font text-center purple-font">Add burger of choice</h1>
     <div id="submit-form" class="col-lg-6 offset-lg-3 text-center p-2 mb-3 rounded">
         <div class="form-group">
             <input type="text" class="form-control text-center" id="newBurgerInput" placeholder="what kind of burger would you like?">
-            <button id="addBurgerBtn" type="button" class="btn btn-warning btn-sm mt-2">Add it!</button>
+            <button id="addBurgerBtn" type="button" class="btn btn-success mt-2 animated pulse font-weight-bold">Add it!</button>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-5 bg-white m-1 rounded">
             <h1 class="text-center content-font mb-3 purple-font">Burgers to Eat</h1>
-            <div id="toEat">
+            <div class="toEat">
                 {{#each burgers}} {{#unless this.devoured}}
                 <div class="content-font h4 d-flex justify-content-between">
-
                     {{this.id}} {{this.burger_name}}
-
                     <button class="btn-primary devourBtn" type="submit" data-devourid="{{this.id}}">Devour It!</button>
-
                 </div>
                 {{/unless}} {{/each}}
             </div>
         </div>
         <div class="col-lg-5 bg-white m-1 rounded content-font h4">
             <h1 class="text-center content-font mb-3 purple-font">Devoured</h1>
-            <div id="devoured">
+            <div class="devoured"> 
                 {{#each burgers}} {{#if this.devoured}}
                 <p>
                     {{this.id}} {{this.burger_name}}

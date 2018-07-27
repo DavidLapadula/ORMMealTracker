@@ -15,6 +15,7 @@ router.get("/", function (req, res) {
         }); 
 });
 
+// make a new burger. Make it RESTful with statuts return of 201
 router.post("/create", function(req, res) {
     burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured])
     .then(() => {
@@ -22,6 +23,7 @@ router.post("/create", function(req, res) {
     }); 
   });
 
+  // use put request to change the 'devoured' status of a burger
   router.put("/:id", function(req, res) {
     let condition = `id=${req.params.id}`;
 
@@ -32,7 +34,7 @@ router.post("/create", function(req, res) {
         res.sendStatus('200'); 
     }); 
   }); 
-
+  
 
 
  

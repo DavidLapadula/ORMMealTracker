@@ -3,8 +3,8 @@ $(document).ready(function () {
     let newBurgerInput = $("#newBurgerInput");
     let addBurgerBtn = $("#addBurgerBtn");
     let devourBtn = $(".devourBtn");
-
-
+  
+// only allow post request if there is something in the field, otherwise add animation to the input field
     addBurgerBtn.click(() => {
         event.preventDefault();
         let newBurgerReq = newBurgerInput.val();
@@ -20,11 +20,14 @@ $(document).ready(function () {
                         window.location.href = '/';
                     }
                 });
-        } else {
-            alert('Burger names cannot be empty')
+        } else {  
+            newBurgerInput.bind("animationend", function () {
+                $(this).removeClass("animated shake border border-danger");
+            }).addClass("animated shake border border-danger");
         }
-    }); 
+    });
 
+    // use AJAX for put request
     devourBtn.on('click', function () {
         event.preventDefault();
         let devouredBurger = $(this).data("devourid");

@@ -1,5 +1,6 @@
 let orm = require('../config/orm.js');
 
+// burger model which calls the ORM for the burger table
 var burger = {
     all: function () {
     return orm.selectAll("burgers"); 

@@ -25,12 +25,5 @@ app.use(routes);
 // Instantiate listener
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-  });             
+  });              
 
-
-
-
-
-
-  //-----------------------------------------------------
- 

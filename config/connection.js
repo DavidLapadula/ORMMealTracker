@@ -3,7 +3,7 @@ let mysql = require('mysql');
 
 // Connect to the database
 let connection = mysql.createConnection({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: 'password',
     database: 'burgers_db'
