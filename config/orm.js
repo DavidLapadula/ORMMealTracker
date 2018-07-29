@@ -1,6 +1,6 @@
 let connection = require('../config/connection.js');
 
-// Print the amount of question marks needed for a prepared statment
+// Print the amount of question marks needed for a prepared statement
 function preparedQuestionMarks(num) {
     let arr = [];
 
@@ -24,7 +24,8 @@ function keyValToSQL(ob) {
     return arr.toString();
 }
 
- 
+
+// return promises of all database queries recieved from models
 let orm = {
     selectAll: function (table) {
         return new Promise(function (resolve, reject) {

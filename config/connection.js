@@ -1,4 +1,4 @@
-// require mySQl dependancies
+// require mySQl dependancy
 let mysql = require('mysql'); 
 
 // Connect to the database

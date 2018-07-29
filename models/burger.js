@@ -12,6 +12,6 @@ var burger = {
     update: function (objColVals, condition) {
     return orm.updateOne("burgers", objColVals, condition); 
     } 
-}; 
+};  
 
 module.exports = burger; 

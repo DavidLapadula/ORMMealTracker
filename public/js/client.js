@@ -3,7 +3,7 @@ $(document).ready(function () {
     let newBurgerInput = $("#newBurgerInput");
     let addBurgerBtn = $("#addBurgerBtn");
     let devourBtn = $(".devourBtn");
-  
+   
 // only allow post request if there is something in the field, otherwise add animation to the input field
     addBurgerBtn.click(() => {
         event.preventDefault();

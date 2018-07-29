@@ -11,8 +11,8 @@ router.get("/", function (req, res) {
             let allBurgers = {
                 burgers: data
             };
-            res.render("index", allBurgers);
-        }); 
+            res.status('200').render("index", allBurgers);
+        })
 });
 
 // make a new burger. Make it RESTful with statuts return of 201
@@ -29,7 +29,7 @@ router.post("/create", function(req, res) {
 
     burger.update({
       devoured: 1
-    }, condition)
+    }, condition) 
     .then(() => {
         res.sendStatus('200'); 
     }); 
