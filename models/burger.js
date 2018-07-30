@@ -9,6 +9,7 @@ var burger = {
     create: function (cols, vals) {
     return orm.insertOne("burgers", cols, vals);
     },
+    //ObjColVals is an object that is parsed, and the condition is the ID of the burger that the user 'devoured'
     update: function (objColVals, condition) {
     return orm.updateOne("burgers", objColVals, condition); 
     } 

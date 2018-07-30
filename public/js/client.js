@@ -14,19 +14,21 @@ $(document).ready(function () {
                 burger_name: newBurgerReq,
                 devoured: 0
             }
+            // makes a new burger then reloads page to display new results
             $.post("/create", newBurgerObj)
-                .done((data) => {
-                    if (data === 'Created') {
+                .done((response) => {
+                    if (response === 'Created') {
                         window.location.href = '/';
                     }
                 });
         } else {  
             newBurgerInput.bind("animationend", function () {
+                // method for animate CSS if the field is empty
                 $(this).removeClass("animated shake border border-danger");
             }).addClass("animated shake border border-danger");
         }
     });
-
+  
     // use AJAX for put request
     devourBtn.on('click', function () {
         event.preventDefault();
@@ -34,15 +36,15 @@ $(document).ready(function () {
         $.ajax({
             url: '/' + devouredBurger,
             type: 'PUT'
-        }).done((data) => {
-            if (data === 'OK') {
+        }).done((response) => {
+            if (response === 'OK') {
                 window.location.href = '/';
             }
         });
  
     });
-
-});
+   
+}); 
 
 
 

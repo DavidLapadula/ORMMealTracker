@@ -2,7 +2,7 @@
 let express = require('express');
 let router = express.Router();
 
-//bring in the burger.js to use its database functions
+//bring in the burger model to use its database functions
 let burger = require('../models/burger.js');
  
 router.get("/", function (req, res) { 
@@ -14,8 +14,8 @@ router.get("/", function (req, res) {
             res.status('200').render("index", allBurgers);
         })
 });
-
-// make a new burger. Make it RESTful with statuts return of 201
+ 
+// make a new burger. Return 201 for successful creation
 router.post("/create", function(req, res) {
     burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured])
     .then(() => {
@@ -23,7 +23,7 @@ router.post("/create", function(req, res) {
     }); 
   });
 
-  // use put request to change the 'devoured' status of a burger
+  // use put request to change the 'devoured' status of a burger. Return 200 for successful update
   router.put("/:id", function(req, res) {
     let condition = `id=${req.params.id}`;
 
@@ -32,7 +32,7 @@ router.post("/create", function(req, res) {
     }, condition) 
     .then(() => {
         res.sendStatus('200'); 
-    }); 
+    });  
   }); 
   
 

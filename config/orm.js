@@ -49,7 +49,7 @@ let orm = {
                 } else {
                     resolve(result)
                 }
-            });
+            }); 
         });
     }, 
 
