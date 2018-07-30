@@ -1,13 +1,12 @@
 // require mySQl dependancy
 let mysql = require('mysql'); 
 
-// Connect to the database
-let connection = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: 'password',
-    database: 'burgers_db'
-});
+let  connection = mysql.createConnection({
+        host: '127.0.0.1',
+        user: 'root',
+        password: 'password',
+        database: 'burgers_db'
+    });
 
 // Start and make the connection
 connection.connect(function (err) {
@@ -19,4 +18,4 @@ connection.connect(function (err) {
 });
 
 // export the connection
-module.exports = connection;   
+module.exports = connection;    
