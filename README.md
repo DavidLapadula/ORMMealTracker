@@ -2,7 +2,7 @@
 
 This is a full stack web application with a simple, personally designed, implementation of object relational mapping. The user may add a burger of their choosing to the list, and then 'devour' it if they choose. The application is designed within the 'Model-Viewer-Control' paradigm of system architecture. 
 
-If you want to see it live, check it out  [here](test)
+If you want to see it live, check it out  [here](https://frozen-badlands-55659.herokuapp.com/)
 
 ## Getting Started
 

@@ -14,7 +14,7 @@ router.get("/", function (req, res) {
             res.status('200').render("index", allBurgers);
         })
 });
- 
+  
 // make a new burger. Return 201 for successful creation
 router.post("/create", function(req, res) {
     burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured])
