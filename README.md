@@ -20,7 +20,7 @@ Hacing built various Full Stacl applications, this project was intended to suppl
 4. Go back to your browser and search for `localhost:8080`, and the app should appear. 
 
 
-## Built With 
+## Technology Used
 
 * [Node.js](https://nodejs.org/en/) 
 * [Express.js](http://expressjs.com/) - Web framework for setting up server
