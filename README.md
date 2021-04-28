@@ -6,7 +6,7 @@ If you want to see it live, check it out  [here](https://frozen-badlands-55659.h
 
 ## Motivation
 
-Hacing built various Full Stacl applications, this project was intended to supplement previous work by introducing a database (mySql) and tem[plating engine. These tools were very effective for data persistency (on the back end) and dynamic data rendering (on the front end). Given the growth of the web and move towards comprehensive web applications, and understanding of such tools is critical for all developers. 
+This project was intended to supplement previous work by introducing a database (mySql) and templating engine. These tools were very effective for data persistency (on the back end) and dynamic data rendering (on the front end). Given the growth of the web and move towards comprehensive web applications, and understanding of such tools is critical for all developers. 
 
 
 ![](./images/burger.gif)
